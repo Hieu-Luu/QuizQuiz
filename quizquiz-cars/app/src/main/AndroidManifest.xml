@@ -26,7 +26,7 @@
         android:theme="@style/Theme.Places">
 
         <activity
-            android:name="com.example.places.MainActivity"
+            android:name="org.quizquiz.cars.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Places">
             <intent-filter>

@@ -20,11 +20,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.android.cars.places'
+    namespace 'org.quizquiz.cars.auto'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.android.cars.places"
+        applicationId "org.quizquiz.cars.auto"
         minSdk 23
         versionCode 1
         versionName "1.0"

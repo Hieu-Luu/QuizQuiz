@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.places.carappservice"
+    namespace = "org.quizquiz.cars.carappservice"
     compileSdk = 34
 
     defaultConfig {
