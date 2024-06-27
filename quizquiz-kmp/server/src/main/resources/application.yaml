@@ -1,0 +1,49 @@
+ktor:
+    development: true
+    application:
+        modules:
+            - ai.coolmind.ApplicationKt.module
+    deployment:
+        port: 8081
+
+# Postgres database configuration
+storage:
+    driverClassName: "org.postgresql.Driver"
+    jdbcURL: "jdbc:postgresql://localhost:5432/coolmind_db"
+    user: "Earable"
+    password: "1234560"
+
+#    security:
+#      ssl:
+#        keyStore: keystore.jks
+#        keyAlias: sampleAlias
+#        keyStorePassword: foobar
+#        privateKeyPassword: foobar
+
+jwt:
+    domain: "https://jwt-provider-domain/"
+    audience: "jwt-audience"
+    realm: "ktor sample app"
+
+# MongoDB database configuration
+db:
+    mongo:
+        user: "coolmind_admin" # If Using environment variable for username then use this "${env.DB_MONGO_USER}"
+        password: "1130Coolmind" # If using environment variable for password then use this "${env.DB_MONGO_PASSWORD}"
+        authMechanism: "SCRAM-SHA-1" # Default|SCRAM-SHA-1|SCRAM-SHA-256
+        host: "127.0.0.1"
+        port: 27017  # Replace with your actual MongoDB port (default for MongoDB)
+        maxPoolSize: 20
+        database:
+            name: "coolmind_db"
+        atlas:
+            user: "coolmind_admin"
+            password: "1130Coolmind"
+            hostname: "coolmind.wmfte67.mongodb.net"
+            appName: "coolmind_db"
+
+# S3 configuration
+#s3:
+#    accessKey: "AKIAIOSFODNN7EXAMPLE"
+#    secretKey: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+#    bucketName: "coolmind-bucket"
