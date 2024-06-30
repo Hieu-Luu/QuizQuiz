@@ -1,0 +1,52 @@
+[versions]
+compose-bom = "2024.06.00"
+# All versions can be found at https://developer.android.com/jetpack/androidx/releases/car-app
+car_app_library_version = "1.4.0"
+gson = "2.11.0"
+hilt = "2.45"
+junit = "4.13.2"
+kotlin = "1.9.24"
+ktor = "2.3.11"
+ksp = "1.8.0-1.0.8"
+lint = "8.4.1"
+retrofit = "2.9.0"
+room = "2.6.1"
+spotless = "6.11.0"
+
+[libraries]
+# AndroidX
+androidx-automotive = { module = "androidx.car.app:app-automotive", version.ref = "car_app_library_version" }
+
+# Room
+androidx-room = { module = "androidx.room:room-ktx", version.ref = "room" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+
+# Compose
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
+
+# Gson
+google-gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+
+# Testing
+junit = { module = "junit:junit", version.ref = "junit" }
+androidx-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4"}
+
+# Ktor
+ktor-client = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+
+# Retrofit
+retrofit2 = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit2-converter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+
+[plugins]
+android-lint = { id = "com.android.lint", version.ref = "lint" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }

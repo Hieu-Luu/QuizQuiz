@@ -1,3 +1,5 @@
+package org.quizquiz.cars.data.di
+
 /*
  * Copyright 2024 Hieu Luu
  *
@@ -14,24 +16,5 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
+object DatabaseModule {
 }
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "QuizQuiz"
-include ':app'
-include ':common:data'
-include ':common:car-app-service'
-include ':automotive'
-
-include ':common:domain'

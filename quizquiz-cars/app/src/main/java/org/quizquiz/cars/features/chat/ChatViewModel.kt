@@ -1,3 +1,7 @@
+package org.quizquiz.cars.features.chat
+
+import androidx.lifecycle.ViewModel
+
 /*
  * Copyright 2024 Hieu Luu
  *
@@ -14,24 +18,6 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "QuizQuiz"
-include ':app'
-include ':common:data'
-include ':common:car-app-service'
-include ':automotive'
+class ChatViewModel : ViewModel() {
 
-include ':common:domain'
+}
