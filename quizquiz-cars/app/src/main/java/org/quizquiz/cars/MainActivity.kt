@@ -44,7 +44,7 @@ import androidx.compose.ui.unit.dp
 import org.quizquiz.cars.data.PlacesRepository
 import org.quizquiz.cars.data.model.Place
 import org.quizquiz.cars.data.model.toIntent
-import org.quizquiz.cars.ui.theme.PlacesTheme
+import org.quizquiz.cars.ui.theme.QuizQuizTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +52,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             val carConnectionType by CarConnection(this).type.observeAsState(initial = -1)
-            PlacesTheme {
+            QuizQuizTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),

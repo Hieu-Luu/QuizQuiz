@@ -1,4 +1,4 @@
-package org.quizquiz.cars.data.model.generativeai
+package org.quizquiz.cars.data.model.authentication
 
 /*
  * Copyright 2024 Hieu Luu
@@ -16,9 +16,7 @@ package org.quizquiz.cars.data.model.generativeai
  * limitations under the License.
  */
 
-enum class Model(val version: String) {
-    GEMINI_1_0_PRO("gemini-1.0-pro"),
-    GEMINI_1_5_FLASH("gemini-1.5-flash"),
-    GEMINI_1_5_PRO("gemini-1.5-pro"),
-    GEMMA_2_27B_IT("gemma-2-27b-it")
-}
+data class VerifyPassRequest(
+    var username: String = "",
+    var password: String = "",
+)

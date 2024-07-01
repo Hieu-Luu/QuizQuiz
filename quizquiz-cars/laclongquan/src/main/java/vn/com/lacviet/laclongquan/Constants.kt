@@ -1,3 +1,5 @@
+package vn.com.lacviet.laclongquan
+
 /*
  * Copyright 2024 Hieu Luu
  *
@@ -14,25 +16,10 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "QuizQuiz"
-include ':app'
-include ':common:data'
-include ':common:car-app-service'
-include ':automotive'
-
-include ':common:domain'
-include ':laclongquan'
+// File path
+const val MP3_PATH = "/mp3"
+const val FIRMWARE_PATH = "/firmware"
+const val MP3_EXT = ".mp3"
+const val BIN_EXT = ".bin"
+const val PDF_PATH = "/pdf"
+const val PDF_EXT = ".pdf"

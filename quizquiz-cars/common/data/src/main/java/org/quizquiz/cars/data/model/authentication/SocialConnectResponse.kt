@@ -1,3 +1,8 @@
+package org.quizquiz.cars.data.model.authentication
+
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
+
 /*
  * Copyright 2024 Hieu Luu
  *
@@ -14,25 +19,7 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "QuizQuiz"
-include ':app'
-include ':common:data'
-include ':common:car-app-service'
-include ':automotive'
-
-include ':common:domain'
-include ':laclongquan'
+data class SocialConnectResponse(
+    @SerializedName("facebook_id") @Expose val facebookId: String,
+    @SerializedName("google_id") @Expose val googleId: String
+)

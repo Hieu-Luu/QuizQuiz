@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2024 Hieu Luu
  *
@@ -15,48 +16,71 @@
  */
 
 plugins {
-    id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kapt) // TODO("Migrate to KSP")
+    alias(libs.plugins.hilt)
 }
 
 android {
     namespace 'org.quizquiz.cars.data'
-    compileSdk 34
+    compileSdk libs.versions.compileSdk.get().toInteger()
 
     defaultConfig {
-        minSdk 23
+        minSdk libs.versions.minSdk.get().toInteger()
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL",  "\"${ hasProperty("STAGING_BASE_URL") ? property("STAGING_BASE_URL") : "" }\"")
+        }
+
         release {
+            buildConfigField("String", "BASE_URL", "\"${ hasProperty("PRODUCTION_BASE_URL") ? property("PRODUCTION_BASE_URL") : "" }\"")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = '17'
+    }
+
+    buildFeatures {
+        buildConfig true
     }
 }
 
 dependencies {
 
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
-    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation libs.kotlinx.coroutines.core
+    implementation libs.androidx.core.ktx.v1100
     implementation libs.androidx.room
     implementation libs.androidx.room.runtime
     kapt libs.androidx.room.compiler // TODO("Migrate to KSP")
     implementation libs.google.gson
     implementation libs.hilt.android
-    kapt libs.hilt.android.compiler // TODO("Migrate to KSP")
+    kapt libs.hilt.compiler // TODO("Migrate to KSP")
+    implementation libs.timber
+    implementation platform(libs.okhttp3.bom)
+    implementation libs.okhttp3
+    implementation libs.okhttp3.logging
+    implementation libs.retrofit2
+    implementation libs.retrofit2.converter
+    implementation project(path: ':laclongquan')
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+}
 
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+// Allow references to generated code
+kapt {
+    correctErrorTypes true
 }

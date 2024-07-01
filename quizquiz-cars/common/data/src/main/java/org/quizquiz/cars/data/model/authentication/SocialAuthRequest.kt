@@ -1,3 +1,7 @@
+package org.quizquiz.cars.data.model.authentication
+
+import vn.com.lacviet.laclongquan.context.getLocale
+
 /*
  * Copyright 2024 Hieu Luu
  *
@@ -14,25 +18,12 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "QuizQuiz"
-include ':app'
-include ':common:data'
-include ':common:car-app-service'
-include ':automotive'
-
-include ':common:domain'
-include ':laclongquan'
+data class SocialAuthRequest(
+    var socialAccountId: String = "",
+    var socialAuthorizeToken: String = "",
+    var socialProvider: String = "",
+    var deviceId: String = "",
+    var email: String = "",
+    var password: String? = null,
+    var language: String? = getLocale()
+)

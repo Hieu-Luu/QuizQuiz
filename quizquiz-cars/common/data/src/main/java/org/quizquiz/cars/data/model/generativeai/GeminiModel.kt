@@ -1,3 +1,5 @@
+package org.quizquiz.cars.data.model.generativeai
+
 /*
  * Copyright 2024 Hieu Luu
  *
@@ -14,25 +16,9 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
+enum class GeminiModel(val version: String) {
+    GEMINI_1_0_PRO("gemini-1.0-pro"),
+    GEMINI_1_5_FLASH("gemini-1.5-flash"),
+    GEMINI_1_5_PRO("gemini-1.5-pro"),
+    GEMMA_2_27B_IT("gemma-2-27b-it")
 }
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "QuizQuiz"
-include ':app'
-include ':common:data'
-include ':common:car-app-service'
-include ':automotive'
-
-include ':common:domain'
-include ':laclongquan'

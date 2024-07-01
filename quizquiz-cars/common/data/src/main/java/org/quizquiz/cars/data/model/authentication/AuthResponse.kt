@@ -1,3 +1,5 @@
+package org.quizquiz.cars.data.model.authentication
+
 /*
  * Copyright 2024 Hieu Luu
  *
@@ -14,25 +16,11 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "QuizQuiz"
-include ':app'
-include ':common:data'
-include ':common:car-app-service'
-include ':automotive'
-
-include ':common:domain'
-include ':laclongquan'
+data class AuthResponse(
+    var accessToken: String = "",
+    var refreshToken: String = "",
+    var tokenType: String = "",
+    var expireIn: Long = 0L,
+    var userId: String = "",
+    var accountType: String = "",
+)

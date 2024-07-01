@@ -1,3 +1,7 @@
+package org.quizquiz.cars.data.remote
+
+import org.quizquiz.cars.data.BuildConfig
+
 /*
  * Copyright 2024 Hieu Luu
  *
@@ -14,25 +18,10 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "QuizQuiz"
-include ':app'
-include ':common:data'
-include ':common:car-app-service'
-include ':automotive'
-
-include ':common:domain'
-include ':laclongquan'
+const val AUTHORIZATION = "Authorization"
+const val BEARER = "Bearer"
+const val CONTENT_TYPE = "Content-Type"
+const val CLIENT = "Client"
+const val RETRY_COUNT = 3
+const val BASE_URL = BuildConfig.BASE_URL
+const val CALL_API_TIMEOUT = 30000L // ms

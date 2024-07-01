@@ -1,3 +1,8 @@
+package vn.com.lacviet.laclongquan.preference
+
+import androidx.datastore.preferences.core.Preferences
+import vn.com.lacviet.laclongquan.AppInitializer
+
 /*
  * Copyright 2024 Hieu Luu
  *
@@ -14,25 +19,9 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "QuizQuiz"
-include ':app'
-include ':common:data'
-include ':common:car-app-service'
-include ':automotive'
+interface BasePreference : AppInitializer {
 
-include ':common:domain'
-include ':laclongquan'
+    fun <T> get(key: Preferences.Key<T>, defaultValue: T): T
+
+    fun <T> set(key: Preferences.Key<T>, value: T)
+}
