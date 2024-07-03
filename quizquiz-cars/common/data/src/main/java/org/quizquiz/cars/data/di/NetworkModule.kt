@@ -24,7 +24,7 @@ import org.quizquiz.cars.data.remote.interceptor.TokenInterceptor
 import org.quizquiz.cars.data.remote.service.authentication.AuthService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import vn.com.lacviet.laclongquan.preference.BasePreference
+import vn.com.lacviet.laclongquan.data.preference.BasePreference
 import java.io.File
 import java.lang.reflect.Modifier
 import java.util.concurrent.TimeUnit

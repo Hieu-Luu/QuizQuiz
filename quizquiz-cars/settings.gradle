@@ -31,8 +31,9 @@ dependencyResolutionManagement {
 rootProject.name = "QuizQuiz"
 include ':app'
 include ':common:data'
+include ':common:domain'
 include ':common:car-app-service'
 include ':automotive'
 
-include ':common:domain'
 include ':laclongquan'
+include ':common:ui'

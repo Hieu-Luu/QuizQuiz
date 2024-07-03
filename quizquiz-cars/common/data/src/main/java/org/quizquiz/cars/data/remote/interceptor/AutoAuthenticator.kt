@@ -9,8 +9,8 @@ import okhttp3.Route
 import org.quizquiz.cars.data.remote.AUTHORIZATION
 import org.quizquiz.cars.data.remote.BEARER
 import org.quizquiz.cars.data.remote.RETRY_COUNT
-import vn.com.lacviet.laclongquan.preference.BasePreference
-import vn.com.lacviet.laclongquan.preference.accessToken
+import vn.com.lacviet.laclongquan.data.preference.BasePreference
+import vn.com.lacviet.laclongquan.data.preference.accessToken
 
 /*
  * Copyright 2024 Hieu Luu

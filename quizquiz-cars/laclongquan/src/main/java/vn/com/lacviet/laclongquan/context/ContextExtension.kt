@@ -31,7 +31,7 @@ import androidx.core.os.LocaleListCompat
 import androidx.fragment.app.Fragment
 import vn.com.lacviet.laclongquan.MP3_EXT
 import vn.com.lacviet.laclongquan.MP3_PATH
-import vn.com.lacviet.laclongquan.preference.BasePreference
+import vn.com.lacviet.laclongquan.data.preference.BasePreference
 import java.io.*
 import java.nio.charset.Charset
 import java.util.*

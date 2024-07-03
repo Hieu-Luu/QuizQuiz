@@ -2,8 +2,8 @@ package org.quizquiz.cars.data.remote.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Response
-import vn.com.lacviet.laclongquan.preference.BasePreference
-import vn.com.lacviet.laclongquan.preference.accessToken
+import vn.com.lacviet.laclongquan.data.preference.BasePreference
+import vn.com.lacviet.laclongquan.data.preference.accessToken
 import javax.inject.Inject
 
 /*

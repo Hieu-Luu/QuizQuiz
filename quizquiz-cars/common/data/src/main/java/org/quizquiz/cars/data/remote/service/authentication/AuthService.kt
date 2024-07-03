@@ -1,8 +1,8 @@
 package org.quizquiz.cars.data.remote.service.authentication
 
-import org.quizquiz.cars.data.model.authentication.*
 import retrofit2.Response
 import retrofit2.http.*
+import vn.com.lacviet.laclongquan.domain.model.authentication.*
 
 /*
  * Copyright 2024 Hieu Luu

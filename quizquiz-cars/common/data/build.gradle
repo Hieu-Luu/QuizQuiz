@@ -62,10 +62,11 @@ android {
 dependencies {
 
     implementation libs.kotlinx.coroutines.core
-    implementation libs.androidx.core.ktx.v1100
+    implementation libs.androidx.core.ktx
     implementation libs.androidx.room
     implementation libs.androidx.room.runtime
     kapt libs.androidx.room.compiler // TODO("Migrate to KSP")
+    implementation libs.generativeai
     implementation libs.google.gson
     implementation libs.hilt.android
     kapt libs.hilt.compiler // TODO("Migrate to KSP")
