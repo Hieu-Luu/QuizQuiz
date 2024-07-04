@@ -2,6 +2,7 @@ package ai.coolmind.plugins
 
 import io.github.smiley4.ktorswaggerui.SwaggerUI
 import io.ktor.server.application.*
+import io.ktor.server.auth.*
 import io.ktor.server.http.content.*
 import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*

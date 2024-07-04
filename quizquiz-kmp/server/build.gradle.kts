@@ -88,8 +88,8 @@ dependencies {
     implementation(libs.exposed.core)
     implementation(libs.exposed.jdbc)
     implementation(libs.exposed.dao)
-    implementation(libs.gemini)
     testImplementation(libs.ktor.server.tests)
     testImplementation(libs.kotlin.test.junit)
     testImplementation(libs.jsonpath)
+    testImplementation(libs.junit.junit)
 }

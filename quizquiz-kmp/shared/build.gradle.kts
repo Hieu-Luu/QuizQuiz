@@ -6,6 +6,7 @@ import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
@@ -48,6 +49,7 @@ kotlin {
         val commonMain by getting {
             // put your Multiplatform dependencies here
             dependencies {
+                implementation(libs.common.serialization.json)
             }
         }
     }
