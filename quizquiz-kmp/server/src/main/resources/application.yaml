@@ -6,6 +6,8 @@ ktor:
     deployment:
         port: 8081
 
+#environment: $KTOR_ENV
+
 # Postgres database configuration
 storage:
     driverClassName: "org.postgresql.Driver"
@@ -21,9 +23,11 @@ storage:
 #        privateKeyPassword: foobar
 
 jwt:
-    domain: "https://jwt-provider-domain/"
+    secret: "secret"
+    privateKey: "MIIBVgIBADANBgkqhkiG9w0BAQEFAASCB6QwggUwMIIBPAIBAAJBAK6cGc3k3n8Z\nr2BxvDxkZk1Hq7H7V3dQeL9aUkq0TqfSb6TJY1QmQvVJQ5CZsKx7rXUWnUxqM"
+    issuer: "http://0.0.0.0:8081/"
     audience: "jwt-audience"
-    realm: "ktor sample app"
+    realm: "QuizQuiz server"
 
 # MongoDB database configuration
 db:
