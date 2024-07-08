@@ -109,14 +109,12 @@ fun Application.configureSecurity(config: ApplicationConfig) {
     }
 
     // Please read the jwt property from the config file if you are using EngineMain
-    val jwtAudience = config.tryGetString("jwt.audience") ?: ""
-    val jwtIssuer = config.tryGetString("jwt.domain") ?: ""
-    val jwtRealm = config.tryGetString("jwt.realm") ?: ""
-    val jwtSecret = config.tryGetString("jwt.secret") ?: ""
-    val jwtPrivate = config.tryGetString("jwt.privateKey") ?: ""
+    val jwtAudience = config.tryGetString("jwt.audience") ?: throw IllegalArgumentException("jwt audience is not set")
+    val jwtIssuer = config.tryGetString("jwt.issuer") ?: throw IllegalArgumentException("jwt domain is not set")
+    val jwtRealm = config.tryGetString("jwt.realm") ?: throw IllegalArgumentException("jwt realm is not set")
+    val jwtSecret = config.tryGetString("jwt.secret") ?: throw IllegalArgumentException("jwt secret is not set")
     authentication {
         jwt("auth-jwt") {
-            println("jwtAudience: $jwtAudience, jwtIssuer: $jwtIssuer, jwtRealm: $jwtRealm, jwtSecret: $jwtSecret, jwtPrivate: $jwtPrivate")
             realm = jwtRealm
             verifier(
                 JWT

@@ -1,53 +1,53 @@
 ktor:
-    development: true
-    application:
-        modules:
-            - ai.coolmind.ApplicationKt.module
-    deployment:
-        port: 8081
-
-#environment: $KTOR_ENV
+  development: true
+  application:
+    modules:
+      - ai.coolmind.ApplicationKt.module
+  deployment:
+    host: $KTOR_HOST
+    port: $KTOR_PORT
+  environment: $KTOR_ENV
 
 # Postgres database configuration
 storage:
-    driverClassName: "org.postgresql.Driver"
-    jdbcURL: "jdbc:postgresql://localhost:5432/coolmind_db"
-    user: "Earable"
-    password: "1234560"
+  driverClassName: $STORAGE_DRIVER
+  jdbcURL: $JDBC_URL
+  user: $JDBC_USER
+  password: $JDBC_PWD
 
-#    security:
-#      ssl:
-#        keyStore: keystore.jks
-#        keyAlias: sampleAlias
-#        keyStorePassword: foobar
-#        privateKeyPassword: foobar
+security:
+  ssl:
+    keyStore: $SSL_KEY_STORE
+    keyAlias: $SSL_KEY_ALIAS
+    keyStorePassword: $SSL_KEY_STORE_PWD
+    privateKeyPassword: $SSL_KEY_PWD
 
 jwt:
-    secret: "secret"
-    privateKey: "MIIBVgIBADANBgkqhkiG9w0BAQEFAASCB6QwggUwMIIBPAIBAAJBAK6cGc3k3n8Z\nr2BxvDxkZk1Hq7H7V3dQeL9aUkq0TqfSb6TJY1QmQvVJQ5CZsKx7rXUWnUxqM"
-    issuer: "http://0.0.0.0:8081/"
-    audience: "jwt-audience"
-    realm: "QuizQuiz server"
+  secret: $JWT_SECRET
+  issuer: $JWT_ISSUER
+  audience: $JWT_AUDIENCE
+  realm: $JWT_REALM
 
 # MongoDB database configuration
 db:
-    mongo:
-        user: "coolmind_admin" # If Using environment variable for username then use this "${env.DB_MONGO_USER}"
-        password: "1130Coolmind" # If using environment variable for password then use this "${env.DB_MONGO_PASSWORD}"
-        authMechanism: "SCRAM-SHA-1" # Default|SCRAM-SHA-1|SCRAM-SHA-256
-        host: "127.0.0.1"
-        port: 27017  # Replace with your actual MongoDB port (default for MongoDB)
-        maxPoolSize: 20
-        database:
-            name: "coolmind_db"
-        atlas:
-            user: "coolmind_admin"
-            password: "1130Coolmind"
-            hostname: "coolmind.wmfte67.mongodb.net"
-            appName: "coolmind_db"
+  mongo:
+    user: $MONGO_USER # If Using environment variable for username then use this "${env.DB_MONGO_USER}"
+    password: $MONGO_PWD # If using environment variable for password then use this "${env.DB_MONGO_PASSWORD}"
+    authMechanism: $MONGO_AUTH_MECHANISM # Default|SCRAM-SHA-1|SCRAM-SHA-256
+    host: $MONGO_HOST
+    port: $MONGO_PORT  # Replace with your actual MongoDB port (default for MongoDB)
+    maxPoolSize: 20
+    database:
+      name: $MONGO_DB
+    atlas:
+      user: $MONGO_ATLAS_USER
+      password: $MONGO_ATLAS_PWD
+      hostname: $MONGO_ATLAS_HOST
+      appName: $MONGO_ATLAS_DB
 
 # S3 configuration
-#s3:
-#    accessKey: "AKIAIOSFODNN7EXAMPLE"
-#    secretKey: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
-#    bucketName: "coolmind-bucket"
+s3:
+  accessKey: $AWS_S3_ACCESS_KEY
+  secretKey: $AWS_S3_SECRET_KEY
+  bucketName: $AWS_S3_BUCKET
+  region: $AWS_S3_REGION
