@@ -1,7 +1,12 @@
 package org.quizquiz.cars.data.remote.interceptor
 
+import android.os.Build
+import androidx.core.os.BuildCompat
+import okhttp3.Dispatcher
 import okhttp3.Interceptor
+import okhttp3.Request
 import okhttp3.Response
+import org.quizquiz.cars.data.BuildConfig
 import vn.com.lacviet.laclongquan.data.preference.BasePreference
 import vn.com.lacviet.laclongquan.data.preference.accessToken
 import javax.inject.Inject
@@ -23,7 +28,8 @@ import javax.inject.Inject
  */
 
 class TokenInterceptor @Inject constructor(private val prefs: BasePreference) : Interceptor {
-    override fun intercept(chain: Interceptor.Chain): Response {
+
+        override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
         val isUpload =
             runCatching {
