@@ -29,29 +29,50 @@ kotlin {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
         }
-
-        dependencies {
-            implementation(libs.mutiplatform.clean.data.android)
-        }
     }
     
     iosX64()
     iosArm64()
     iosSimulatorArm64()
     
-    jvm {
-        dependencies {
-            implementation(libs.mutiplatform.clean.data.jvm)
-        }
-    }
+    jvm()
     
     sourceSets {
         val commonMain by getting {
             // put your Multiplatform dependencies here
             dependencies {
+                implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.common.serialization.json)
+                implementation(libs.koin.core)
+                implementation(libs.bundles.ktor.common)
+//                implementation(libs.ktor.client.core)
+//                implementation(libs.ktor.client.content.negotiation)
+//                implementation(libs.ktor.serialization.json)
+                implementation(libs.logback)
+
+                implementation(libs.koin.test)
             }
         }
+
+        val commonTest by getting {
+            dependencies {
+                implementation(kotlin("test"))
+            }
+        }
+
+        androidMain.dependencies {
+            implementation(libs.ktor.client.okhttp)
+        }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
+        }
+
+        jvmMain.dependencies {
+            implementation(libs.ktor.client.java)
+        }
+
+        wasmJsMain.dependencies {}
     }
 }
 

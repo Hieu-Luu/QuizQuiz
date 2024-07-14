@@ -12,7 +12,9 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
-        maven("https://maven.pkg.jetbrains.space/public/p/ktor/eap")
+        maven("https://maven.pkg.jetbrains.space/public/p/ktor/eap") // early access
+        maven("https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
         jcenter() // Add this if the dependency might be available here
         maven("https://maven.google.com")
         maven("https://jitpack.io")
@@ -38,6 +40,8 @@ dependencyResolutionManagement {
         }
         mavenCentral()
         maven("https://maven.pkg.jetbrains.space/public/p/ktor/eap")
+        maven("https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
         jcenter() // Add this if the dependency might be available here
         maven("https://maven.google.com")
         maven("https://jitpack.io")
